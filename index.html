@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Task Management</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main class="app">
+        <header class="topbar">
+            <div class="title">
+                <h1>To-Do List</h1>
+                <p class="subtitle">Small wins, Big momentum ✨</p>
+            </div>
+
+            <div class="controls">
+                <div class="filters">
+                    <button class="filter pill active" data-priority="all">All</button>
+                    <button class="filter pill" data-priority="high"><span class="dot high"></span>High</button>
+                    <button class="filter pill" data-priority="medium"><span class="dot medium"></span>Medium</button>
+                    <button class="filter pill" data-priority="low"><span class="dot low"></span>Low</button>
+                </div>
+
+                <div class="actions">
+                    <button id="addBtn" class="pill primary">+ Add task</button>
+                    <button id="clearBtn" class="pill ghost">Delete all</button>
+                </div>
+            </div>
+        </header>
+
+        <section id="board" class="board" aria-live="polite"></section>
+    </main>
+
+    <!-- Add Task Pop up -->
+    <div id="popup" class="popup hidden" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="popup-card">
+            <div class="popup-head">
+                <h2>New task</h2>
+                <button id="closePopup" class="icon-btn" aria-label="Close">✕</button>
+            </div>
+
+            <textarea id="taskText" placeholder="What do you want to do?" rows="5"></textarea>
+
+            <div class="popup-controls">
+                <div class="priority-select">
+                    <label>Priority</label>
+                    <div class="prio-buttons">
+                        <button class="prio-btn active" data-priority="high"><span class="dot high"></span>
+                            High</button>
+                        <button class="prio-btn" data-priority="medium"><span class="dot medium"></span> Medium</button>
+                        <button class="prio-btn" data-priority="low"><span class="dot low"></span> Low</button>
+                    </div>
+                </div>
+
+                <div class="popup-actions">
+                    <button id="createTaskBtn" class="pill primary">Create</button>
+                    <button id="cancelBtn" class="pill ghost">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
